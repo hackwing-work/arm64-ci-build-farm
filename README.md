@@ -74,23 +74,3 @@ helm install arm64-builders \
 ```
 
 Never expose self-hosted runners to arbitrary forked pull requests. See [SECURITY.md](SECURITY.md) before connecting a runner to a real organization.
-
-## Release
-
-Push a semantic-version tag such as `v0.1.0`. The release workflow publishes an AMD64/ARM64 manifest to GHCR and attaches an SBOM and build-provenance attestation. Replace all `REPLACE_ME` placeholders before publishing.
-
-## Interview discussion points
-
-- Why native ARM64 execution catches issues that cross-compilation alone cannot
-- When QEMU is appropriate and when it distorts performance measurements
-- How ephemeral runners reduce persistence and credential-exposure risks
-- The cost/latency trade-off of scaling runners to zero
-- How SBOMs, immutable digests, and provenance protect the software supply chain
-- How cache keys and isolated node pools affect speed, cost, and security
-
-## Roadmap
-
-- Terraform modules for an ARM64 Kubernetes node pool
-- Grafana dashboard backed by the Actions Runner Controller metrics
-- Queue-to-start SLO measurement and benchmark report
-- Failure injection for runner eviction and registry outages
