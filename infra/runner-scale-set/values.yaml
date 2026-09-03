@@ -1,6 +1,6 @@
 # Values for the official gha-runner-scale-set chart.
 # Install the controller first, then provide githubConfigSecret out-of-band.
-githubConfigUrl: https://github.com/REPLACE_ME/arm64-ci-build-farm
+githubConfigUrl: https://github.com/hackwing-work/arm64-ci-build-farm
 githubConfigSecret: github-runner-secret
 minRunners: 0
 maxRunners: 10
