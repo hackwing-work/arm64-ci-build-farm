@@ -1,0 +1,11 @@
+.git
+.github
+deploy
+docs
+infra
+monitoring
+scripts
+bin
+dist
+*.md
+

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: arm64-ci-build-farm
+description: Demo workload proving amd64 and arm64 release delivery
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+

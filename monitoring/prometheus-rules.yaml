@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: arm64-runner-alerts
+spec:
+  groups:
+    - name: arm64-build-farm
+      rules:
+        - alert: GitHubRunnerQueueBacklog
+          expr: sum(gha_job_startup_duration_seconds_count) - sum(gha_job_execution_duration_seconds_count) > 5
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: More than five jobs appear queued
+        - alert: GitHubRunnerJobFailureRateHigh
+          expr: sum(rate(gha_job_completed_total{conclusion="failure"}[15m])) / clamp_min(sum(rate(gha_job_completed_total[15m])), 1) > 0.20
+          for: 15m
+          labels:
+            severity: critical
+          annotations:
+            summary: Runner job failure rate exceeds 20 percent
+

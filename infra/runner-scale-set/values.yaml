@@ -1,0 +1,23 @@
+# Values for the official gha-runner-scale-set chart.
+# Install the controller first, then provide githubConfigSecret out-of-band.
+githubConfigUrl: https://github.com/REPLACE_ME/arm64-ci-build-farm
+githubConfigSecret: github-runner-secret
+minRunners: 0
+maxRunners: 10
+runnerScaleSetName: arm64-builders
+template:
+  spec:
+    nodeSelector:
+      kubernetes.io/arch: arm64
+    containers:
+      - name: runner
+        # Pin this tag to the runner version approved by your organization.
+        image: ghcr.io/actions/actions-runner:2.328.0
+        command: ["/home/runner/run.sh"]
+        resources:
+          requests:
+            cpu: "500m"
+            memory: 1Gi
+          limits:
+            cpu: "2"
+            memory: 4Gi
