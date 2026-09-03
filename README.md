@@ -1,6 +1,6 @@
 # ARM64 CI Build Farm
 
-[![CI](https://github.com/REPLACE_ME/arm64-ci-build-farm/actions/workflows/ci.yml/badge.svg)](https://github.com/REPLACE_ME/arm64-ci-build-farm/actions/workflows/ci.yml)
+[![CI](https://github.com/hackwing-work/arm64-ci-build-farm/actions/workflows/ci.yml/badge.svg)](https://github.com/hackwing-work/arm64-ci-build-farm/actions/workflows/ci.yml)
 
 A portfolio-grade reference platform for building, testing, securing, and releasing software for both AMD64 and ARM64. It combines multi-architecture GitHub Actions pipelines with autoscaled Kubernetes runners, artifact attestations, an SBOM, security scanning, caching, and operational alerts.
 
